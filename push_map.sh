@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navkit2ui/files/map
+DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navkit2ui/files/keystores
 
 adb shell "mkdir -p ${DEVICE_MAP_DIR}" || exit 1
-if [ $# -ne 1 ]; then
+if [ $# -ne 2 ]; then
 	echo "Wrong number of parameters"
 else
 	MAPPATH=$1
+	KEYPATH=$2
 	echo "Pushing '${MAPPATH}/DATA/.' to '${DEVICE_MAP_DIR}'"
 	adb push "${MAPPATH}/DATA/." "${DEVICE_MAP_DIR}"
 	if [ $? -eq 0 ]; then
@@ -14,5 +16,10 @@ else
 	else
 		echo "Failed to push '${MAPPATH}' to '${DEVICE_MAP_DIR}'"
 	fi
+	adb push "${KEYPATH}" "${DEVICE_KYESTORE_DIR}"
+	if [ $? -eq 0 ]; then
+		echo "Done"
+	else
+		echo "Failed to push '${KEYPATH}' to '${DEVICE_KYESTORE_DIR}'"
+	fi
 fi
-
