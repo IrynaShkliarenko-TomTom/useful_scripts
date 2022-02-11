@@ -3,9 +3,17 @@
 DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navkit2ui/files/map
 DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navkit2ui/files/keystores
 
+function usage {
+    echo ""
+    echo "To use the script:"
+    echo " - sh ./push_map.sh *map path* *key path*"
+    echo ""
+}
+
 adb shell "mkdir -p ${DEVICE_MAP_DIR}" || exit 1
 if [ $# -ne 2 ]; then
 	echo "Wrong number of parameters"
+	usage
 else
 	MAPPATH=$1
 	KEYPATH=$2
