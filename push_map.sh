@@ -24,6 +24,7 @@ else
 	else
 		echo "Failed to push '${MAPPATH}' to '${DEVICE_MAP_DIR}'"
 	fi
+	echo "Pushing '${KEYPATH}' to '${DEVICE_KYESTORE_DIR}'"
 	adb push "${KEYPATH}" "${DEVICE_KYESTORE_DIR}"
 	if [ $? -eq 0 ]; then
 		echo "Done"
