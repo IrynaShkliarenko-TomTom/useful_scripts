@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navkit2ui/files/map
-DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navkit2ui/files/keystores
+DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/maps/bundled
+DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp/files/keystores
 
 function usage {
     echo ""
@@ -17,8 +17,9 @@ if [ $# -ne 2 ]; then
 else
 	MAPPATH=$1
 	KEYPATH=$2
-	echo "Pushing '${MAPPATH}/DATA/.' to '${DEVICE_MAP_DIR}'"
-	adb push "${MAPPATH}/DATA/." "${DEVICE_MAP_DIR}"
+	echo "Pushing '${MAPPATH}' to '${DEVICE_MAP_DIR}'"
+	adb push "${MAPPATH}/00000028" "${DEVICE_MAP_DIR}"
+	adb push "${MAPPATH}/ROOT.NDS" "${DEVICE_MAP_DIR}"
 	if [ $? -eq 0 ]; then
 		echo "Done"
 	else
