@@ -4,8 +4,10 @@ DEVICE_TTP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/
 
 function usage {
     echo ""
-    echo "To use the script:"
-    echo " ./play_ttp.sh <path to .ttp file>"
+    echo "To play the route:"
+    echo "./play_ttp.sh <path to .ttp file>"
+	echo "To stop playing the route:"
+	echo "./play_ttp.sh stop"
     echo ""
 }
 
