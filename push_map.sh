@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/maps/bundled
-DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp/files/keystores
 
 function usage {
     echo ""
     echo "To use the script:"
-    echo " - sh ./push_map.sh *map path* *key path*"
+    echo " - sh ./push_map.sh *map path*
     echo ""
 }
 
@@ -16,7 +15,6 @@ if [ $# -ne 2 ]; then
 	usage
 else
 	MAPPATH=$1
-	KEYPATH=$2
 	echo "Pushing '${MAPPATH}' to '${DEVICE_MAP_DIR}'"
 	adb push "${MAPPATH}/00000028" "${DEVICE_MAP_DIR}"
 	adb push "${MAPPATH}/ROOT.NDS" "${DEVICE_MAP_DIR}"
@@ -24,12 +22,5 @@ else
 		echo "Done"
 	else
 		echo "Failed to push '${MAPPATH}' to '${DEVICE_MAP_DIR}'"
-	fi
-	echo "Pushing '${KEYPATH}' to '${DEVICE_KYESTORE_DIR}'"
-	adb push "${KEYPATH}" "${DEVICE_KYESTORE_DIR}"
-	if [ $? -eq 0 ]; then
-		echo "Done"
-	else
-		echo "Failed to push '${KEYPATH}' to '${DEVICE_KYESTORE_DIR}'"
 	fi
 fi
