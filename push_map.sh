@@ -18,6 +18,7 @@ else
 	echo "Pushing '${MAPPATH}' to '${DEVICE_MAP_DIR}'"
 	adb push "${MAPPATH}/00000028" "${DEVICE_MAP_DIR}"
 	adb push "${MAPPATH}/ROOT.NDS" "${DEVICE_MAP_DIR}"
+	adb push "${MAPPATH}/ROOT.wal" "${DEVICE_MAP_DIR}"
 	if [ $? -eq 0 ]; then
 		echo "Done"
 	else
