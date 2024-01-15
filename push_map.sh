@@ -10,6 +10,7 @@ function usage {
 }
 
 adb shell "mkdir -p ${DEVICE_MAP_DIR}" || exit 1
+adb shell "mkdir -p ${DEVICE_KYESTORE_DIR}" || exit 1
 if [ $# -ne 2 ]; then
 	echo "Wrong number of parameters"
 	usage
