@@ -5,6 +5,7 @@ DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp/files/keystores/
 
 adb install -g app.apk
 adb shell am start -n com.tomtom.navapp/.MainActivity
+adb shell "rm -rf ${DEVICE_MAP_DIR}"
 
 sleep 20
 adb shell "mkdir -p ${DEVICE_MAP_DIR}"
