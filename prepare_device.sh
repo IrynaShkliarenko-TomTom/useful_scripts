@@ -9,7 +9,7 @@ adb shell "rm -rf ${DEVICE_MAP_DIR}"
 
 sleep 20
 adb shell "mkdir -p ${DEVICE_MAP_DIR}"
-adb shell "mkdir -p ${DEVICE_KYESTORE_DIR}"
+adb shell "mkdir -p ${DEVICE_KYESTORE_DIR}/00000028"
 
 # adb push "/Users/shkliare/Documents/Maps/world_map/bundled/00000028" "${DEVICE_MAP_DIR}"
 # adb push "/Users/shkliare/Documents/Maps/world_map/bundled/ROOT.NDS" "${DEVICE_MAP_DIR}"
