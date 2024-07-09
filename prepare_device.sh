@@ -15,9 +15,9 @@ adb shell "mkdir -p ${DEVICE_KYESTORE_DIR}/00000028"
 # adb push "/Users/shkliare/Documents/Maps/world_map/bundled/ROOT.NDS" "${DEVICE_MAP_DIR}"
 # adb push "/Users/shkliare/Documents/Maps/world_map/bundled/NK_AUTO_DEV.NKS" "${DEVICE_KYESTORE_DIR}"
 
-adb push "/Users/shkliare/Documents/Maps/Poland/00000028" "${DEVICE_MAP_DIR}"
-adb push "/Users/shkliare/Documents/Maps/Poland/ROOT.NDS" "${DEVICE_MAP_DIR}"
-adb push "/Users/shkliare/Documents/Maps/Poland/NK_AUTO_DEV.NKS" "${DEVICE_KYESTORE_DIR}"
+adb push "/Users/shkliare/Documents/Maps/pl-sk-cz/00000028" "${DEVICE_MAP_DIR}"
+adb push "/Users/shkliare/Documents/Maps/pl-sk-cz/ROOT.NDS" "${DEVICE_MAP_DIR}"
+adb push "/Users/shkliare/Documents/Maps/pl-sk-cz/NK_AUTO_DEV.NKS" "${DEVICE_KYESTORE_DIR}"
 
 # Japan Caruso2 Map
 # adb push "/Users/shkliare/Documents/Maps/japan_caruso/NDS_AutomotiveReference_2022.12_2.4.6_JPN-Caruso2-0823V1/DATA/00000028" "${DEVICE_MAP_DIR}"
