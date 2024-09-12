@@ -39,6 +39,6 @@ else
         adb push NK_AUTO_DEV.NKS "${old_navapp_dir}/keystore.sqlite"
 		echo "Downloaded Poland map form sharepoint"
     )
-	
 	rm -rf $temp_dir
 fi
+#Maven metadata https://artifactory.tomtom.com/ui/repos/tree/General/navapp-releases/com/tomtom/navui/Products_StockNavApp/maven-metadata.xml
