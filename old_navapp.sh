@@ -41,4 +41,6 @@ else
     )
 	rm -rf $temp_dir
 fi
-#Maven metadata https://artifactory.tomtom.com/ui/repos/tree/General/navapp-releases/com/tomtom/navui/Products_StockNavApp/maven-metadata.xml
+
+# Maven metadata is the last file in the last file in the Products_StockNavApp directory, latest stock navapp artifact is somewhere at the end of the list as well, so by going to metadata will save a lot of time scrolling down the list.
+# Maven metadata: https://artifactory.tomtom.com/ui/repos/tree/General/navapp-releases/com/tomtom/navui/Products_StockNavApp/maven-metadata.xml
