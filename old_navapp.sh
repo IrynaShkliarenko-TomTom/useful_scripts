@@ -9,11 +9,13 @@ navsdk_map_dir="/sdcard/Android/data/com.tomtom.navapp.gosdk/files/maps/bundled"
 navsdk_keystore_file="/sdcard/Android/data/com.tomtom.navapp.gosdk/files/keystores/NK_AUTO_DEV.NKS"
 download_map_link='https://tomtominternational-my.sharepoint.com/:u:/g/personal/iryna_shkliarenko_tomtom_com/EWrjF3AmVMlMmWkx57wGI5wBizwnFLySFdCHNtQTv3EHHA?download=1'
 
-
+# Install apk
 [ $# -eq 1 ] && adb install "$1" && echo "APK installed successfully!"
 
+# Create file structure
 adb shell rm -rf $old_navapp_dir
 adb shell mkdir -p $old_navapp_dir
+
 # Copy map from AUI NK1 if exists
 if adb shell [ -d "${nk1_map_dir}/00000028/" ]; then
 	adb shell cp -r "${nk1_map_dir}/00000028/" $old_navapp_dir
@@ -37,7 +39,7 @@ else
         adb push 00000028 $old_navapp_dir
         adb push ROOT.NDS $old_navapp_dir
         adb push NK_AUTO_DEV.NKS "${old_navapp_dir}/keystore.sqlite"
-		echo "Downloaded Poland map form sharepoint"
+		echo "Downloaded Poland map from sharepoint"
     )
 	rm -rf $temp_dir
 fi
