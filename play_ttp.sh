@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DEVICE_TTP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/
+# DEVICE_TTP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/
+DEVICE_TTP_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/
 
 function usage {
     echo ""
@@ -18,7 +19,6 @@ else
         echo "Sending stop to '${PACKAGE}/com.tomtom.positioning.player.Player'"
 		adb shell am startservice -n com.tomtom.navapp/com.tomtom.positioning.player.Player -a com.tomtom.positioning.player.STOP
 	else
-		
 		TTP_PATH=$1
 		echo ${TTP_PATH}
 		echo "Pushing '${TTP_PATH}' to '${DEVICE_TTP_DIR}'"
@@ -26,4 +26,4 @@ else
 		echo "Playing the file"
 		adb shell am startservice -n com.tomtom.navapp/com.tomtom.positioning.player.Player -a com.tomtom.positioning.player.START -e 'log_file' ${DEVICE_TTP_DIR}/route.ttp
 	fi
-fi	
+fi
