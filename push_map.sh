@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/maps/bundled
+DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/maps/bundled/
+DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/keystores/
 
 function usage {
     echo ""
