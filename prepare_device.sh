@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp/files/maps/bundled/
+DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/maps/bundled/
 # DEVICE_MAP_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/maps/bundled/
-DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp/files/keystores/
+DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/keystores/
 # DEVICE_KYESTORE_DIR=/sdcard/Android/data/com.tomtom.navapp.gosdk/files/keystores/
 
-adb install -g -d app-navkit1-debug.apk
-adb shell am start -n com.tomtom.navapp/.MainActivity
+adb install -g -d app-gosdk-debug.apk
+adb shell am start -n com.tomtom.navapp.gosdk/com.tomtom.navapp.MainActivity
 adb shell "rm -rf ${DEVICE_MAP_DIR}"
 
 sleep 20
@@ -27,9 +27,9 @@ adb push "/Users/shkliare/Documents/Maps/japan_caruso/NDS_AutomotiveReference_20
 adb push "/Users/shkliare/Documents/Maps/japan_caruso/NDS_AutomotiveReference_2022.12_2.4.6_JPN-Caruso2-0823V1/DATA/ROOT.NDS" "${DEVICE_MAP_DIR}"
 adb push "/Users/shkliare/Documents/Maps/japan_caruso/NK_AUTO_DEV.NKS" "${DEVICE_KYESTORE_DIR}"
 
-adb shell run-as com.tomtom.navapp touch /data/data/com.tomtom.navapp/files/first-run-wizard-completed
-adb shell am force-stop com.tomtom.navapp
-adb shell am start -n com.tomtom.navapp/.MainActivity
+adb shell run-as com.tomtom.navapp.gosdk touch /data/data/com.tomtom.navapp.gosdk/files/first-run-wizard-completed
+adb shell am force-stop com.tomtom.navapp.gosdk
+adb shell am start -n com.tomtom.navapp.gosdk/com.tomtom.navapp.MainActivity
 
 if [ $? -eq 0 ]; then
 	echo "Done"
